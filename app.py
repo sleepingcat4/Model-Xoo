@@ -42,12 +42,45 @@ def datasets():
 
 @app.route('/models')
 def models():
-    # Define your model links here
-    model_links = [
-        {'name': 'Model 1', 'link': 'http://example.com/model1'},
-        {'name': 'Model 2', 'link': 'http://example.com/model2'}
+
+    biomedical_models = [
+        'Logistic Regression',
+        'Support Vector Machines (SVM)',
+        'Random Forest',
+        'Decision Trees',
+        'K-Nearest Neighbors (KNN)',
+        'Naive Bayes',
+        'Neural Networks (Multi-layer Perceptron)',
+        'Convolutional Neural Networks (CNN)',
+        'Recurrent Neural Networks (RNN)',
+        'Long Short-Term Memory Networks (LSTM)',
+        'Gated Recurrent Units (GRU)',
+        'Transformer-based Models (e.g., BERT for NLP tasks)',
+        'Autoencoders',
+        'Variational Autoencoders (VAE)',
+        'Generative Adversarial Networks (GAN)',
+        'Deep Belief Networks (DBN)',
+        'Random Forests for Genomic Data',
+        'Bayesian Models for Association Studies'
     ]
-    return render_template('models.html', model_links=model_links)
+
+    space_biology_models = [
+        'Linear Regression',
+        'Support Vector Machines (SVM)',
+        'Random Forest',
+        'Decision Trees',
+        'K-Nearest Neighbors (KNN)',
+        'Naive Bayes',
+        'Time Series Analysis (e.g., ARIMA)',
+        'Clustering Algorithms (e.g., K-Means)',
+        'Principal Component Analysis (PCA)',
+        'Gene Expression Analysis Techniques (e.g., Differential Expression Analysis)',
+        'Multi-omics Data Integration Techniques',
+        'Environmental Data Analysis Models'
+    ]
+
+    return render_template('models.html', biomedical_models=biomedical_models, space_biology_models=space_biology_models)
+
 
 # Run the app
 if __name__ == '__main__':

@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <title>Models</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-
 </head>
 <body class="dark-theme">
     <h1>Available Models</h1>
+    <h2>For Biomedical Datasets:</h2>
     <ul>
-        {% for model in model_links %}
-            <li><a href="{{ model.link }}">{{ model.name }}</a></li>
+        {% for model in biomedical_models %}
+            <li>{{ model }}</li>
         {% endfor %}
     </ul>
+
+    <h2>For Space Biology Datasets:</h2>
+    <ul>
+        {% for model in space_biology_models %}
+            <li>{{ model }}</li>
+        {% endfor %}
+    </ul>
+    
     <div class="footer">
         <p>Developed by Alpha Tauri</p>
     </div>
 </body>
 <script src="{{ url_for('static', filename='js/applyLoadedClass.js') }}"></script>
-
 </html>
