@@ -2,20 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Datasets</title>
+    <title>Available Datasets</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
 </head>
 <body class="dark-theme">
     <h1>Available Datasets</h1>
-    <ul>
-        {% for dataset in dataset_links %}
-            <li><a href="{{ dataset.link }}">{{ dataset.name }}</a></li>
-        {% endfor %}
-    </ul>
+    {% for category in biomedical_datasets %}
+        <h2>{{ category.name }}</h2>
+        <ul>
+            {% for dataset in category.links %}
+                <li><a href="{{ dataset.link }}">{{ dataset.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
     <div class="footer">
         <p>Developed by Alpha Tauri</p>
     </div>
+    <script src="{{ url_for('static', filename='js/themeToggle.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/applyLoadedClass.js') }}"></script>
 </body>
-<script src="{{ url_for('static', filename='js/applyLoadedClass.js') }}"></script>
-
 </html>
